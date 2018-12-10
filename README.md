@@ -18,6 +18,8 @@ Enjoy hand-writing your HTML? Keep it old-school with modern build tools. This b
 - SCSS to CSS transpilation, bundling, autoprefixing, and minification
 - Automatic copying of HTML and static assets from `src` to `dist` folders
 - Linting for styles and scripts
+- Support for webp images
+- Bootstrap on another branch
 
 ## 🛠 Usage
 
