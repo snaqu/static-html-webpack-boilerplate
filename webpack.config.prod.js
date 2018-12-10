@@ -1,23 +1,34 @@
 const cssnano = require('cssnano');
 const merge = require('webpack-merge');
-
+const ImageminWebpWebpackPlugin = require('imagemin-webp-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 
 const common = require('./webpack.config.common.js');
 
 module.exports = merge(common, {
-  mode: 'production',
-  optimization: {
-    minimize: true,
-  },
-  plugins: [
-    new CleanWebpackPlugin(['dist']),
-    new OptimizeCssAssetsPlugin({
-      assetNameRegExp: /\.css$/g,
-      cssProcessor: cssnano,
-      cssProcessorOptions: { discardComments: { removeAll: true } },
-      canPrint: true,
-    }),
-  ],
+	mode: 'production',
+	optimization: {
+		minimize: true,
+	},
+	plugins: [
+		new CleanWebpackPlugin(['dist']),
+		new OptimizeCssAssetsPlugin({
+			assetNameRegExp: /\.css$/g,
+			cssProcessor: cssnano,
+			cssProcessorOptions: { discardComments: { removeAll: true } },
+			canPrint: true,
+		}),
+		new ImageminWebpWebpackPlugin({
+			config: [
+				{
+					test: /\.(jpe?g|png)$/,
+					options: {
+						quality: 75
+					}
+				}
+			],
+			detailedLogs: false
+		})
+	],
 });
