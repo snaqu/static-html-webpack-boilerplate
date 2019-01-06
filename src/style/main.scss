@@ -1,13 +1,9 @@
-@import "~bootstrap/scss/bootstrap";
-@import "partials/variables";
-@import "partials/mixins";
 body {
-    font-family: 'Helvetica Neue', sans-serif;
-    text-align: center;
+  font-family: 'Helvetica Neue', sans-serif;
+  text-align: center;
 }
 
 img {
-    display: block;
-    margin: 50px auto;
-    padding: 2em;
+  display: block;
+  margin: 50px auto;
 }
