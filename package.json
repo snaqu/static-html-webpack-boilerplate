@@ -4,12 +4,9 @@
   "description": "Modern tooling for old-school static webpage development",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.prod.js",
-    "lint:js": "./node_modules/.bin/eslint src/js/*.js",
-    "lint:styles": "stylelint \"src/**/*.scss\"",
-    "lint:html": "pa11y-ci ./src/**/*.html",
+    "build": "webpack --mode production --config webpack.config.prod.js",
     "start:dev": "webpack-dev-server --config webpack.config.dev.js",
-    "start": "webpack --config webpack.config.prod.js && http-server ./dist -o"
+    "start": "webpack --mode production --config webpack.config.prod.js && http-server ./dist -o"
   },
   "repository": {
     "type": "git",
